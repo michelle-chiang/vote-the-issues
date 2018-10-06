@@ -1,3 +1,6 @@
+// TODO: connect to Firebase Database
+// follow https://www.codementor.io/yurio/all-you-need-is-react-firebase-4v7g9p4kf
+
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
