@@ -23,9 +23,9 @@ const IssueSelector = (props) => (
     <div>
         <label className='category-label'>{props.category}</label>
         <div className='checkbox-group'>
-            {categoryInfo[props.category].map(issue => {
+            {categoryInfo[props.category].map(function(issue, i) {
                 return (
-                    <label key={props.category} className='issue-label'>
+                    <label key={issue} className='issue-label'>
                         <input
                             className='form-checkbox'
                             name={issue}

@@ -24,6 +24,7 @@ const categoryInfo = {
     ]
 }
 
+// helped by https://lorenstewart.me/2016/10/31/react-js-forms-controlled-components/
 class ChooseYourIssues extends React.Component {
     constructor(props) {
         super(props);
@@ -50,6 +51,7 @@ class ChooseYourIssues extends React.Component {
                 {Object.keys(categoryInfo).map(category => {
                     return (
                         <IssueSelector 
+                            key={category}
                             category={category}
                             controlFunc={this.handleIssueSelection}
                             selectedOptions={this.state.selectedIssues}
@@ -57,7 +59,7 @@ class ChooseYourIssues extends React.Component {
                     );
                 })}
                 
-                <p><Link to={routes.MAKE_YOUR_PLAN}>Make your plan.</Link></p>
+                <p><Link to={routes.MAKE_YOUR_PLAN}>Make your plan >>></Link></p>
             </div>
         )
     }
