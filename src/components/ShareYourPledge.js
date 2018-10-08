@@ -11,6 +11,8 @@ class ShareYourPledge extends React.Component {
         }
     }
     updateCanvas (text, i) {
+        // TODO: make random color backgrounds
+        // TODO: make font nice with highlights
         let canvas = document.getElementById(`issue_${i}`)
         const ctx = canvas.getContext("2d");
         ctx.font = "30px Arial";
@@ -29,6 +31,7 @@ class ShareYourPledge extends React.Component {
                             id={`issue_${i}`} 
                             width='200' 
                             height='100' 
+                            // TODO: set this in css file?
                             style={{
                                 border: '1px solid #000000'
                             }}>

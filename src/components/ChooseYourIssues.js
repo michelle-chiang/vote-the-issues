@@ -4,26 +4,8 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import IssueSelector from './IssueSelector';
 
+import issueData from '../constants/issues';
 import * as routes from '../constants/routes';
-
-// TODO: import this from constants/issues.json
-const categoryInfo = {
-    'Category 1': [
-        'description 1',
-        'description 2',
-        'description 3'
-    ],
-    'Category 2': [
-        'description 1',
-        'description 2',
-        'description 3'
-    ],
-    'Category 3': [
-        'description 1',
-        'description 2',
-        'description 3'
-    ]
-}
 
 // helped by https://lorenstewart.me/2016/10/31/react-js-forms-controlled-components/
 class ChooseYourIssues extends React.Component {
@@ -31,8 +13,7 @@ class ChooseYourIssues extends React.Component {
         return (
             <div>
                 <Header activeRoute='choose-your-issues' />
-                <p>choose your issues page</p>
-                {Object.keys(categoryInfo).map(category => {
+                {Object.keys(issueData).map(category => {
                     return (
                         <IssueSelector 
                             key={category}
