@@ -1,11 +1,12 @@
 # Vote the Issues
-View at [vote-the-issues.firebaseapp.com](vote-the-issues.firebaseapp.com)
+View at [vote-the-issues.firebaseapp.com](https://vote-the-issues.firebaseapp.com).
 
 ## Local Development
 `npm start`
 
 ## Deploy
 `npm run build`
+
 `firebase deploy`
 
 # Further Resources
