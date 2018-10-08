@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Header from './Header';
 import IssueSelector from './IssueSelector';
 
 import * as routes from '../constants/routes';
@@ -29,6 +30,7 @@ class ChooseYourIssues extends React.Component {
     render() {
         return (
             <div>
+                <Header activeRoute='choose-your-issues' />
                 <p>choose your issues page</p>
                 {Object.keys(categoryInfo).map(category => {
                     return (

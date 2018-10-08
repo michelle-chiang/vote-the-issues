@@ -4,7 +4,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Header from './Header';
 import Navigation from './Navigation';
 import ChooseYourIssues from './ChooseYourIssues';
 import MakeYourPlan from './MakeYourPlan';
@@ -39,10 +38,6 @@ class App extends Component {
       <Router>
         <div>
           <Navigation />
-
-          {/* TODO: make activeRoute dynamic based on params */}
-          <Header activeRoute='choose-your-issues' />
-
           <Route
             exact path={routes.CHOOSE_YOUR_ISSUES}
             render={(props) => <ChooseYourIssues {...props} 

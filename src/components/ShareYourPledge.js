@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-// TODO: get these as props from React Router
-// let issues = ['asdflkjasdfl', 'hello dere', 'bleh'];
+import Header from './Header';
 
 class ShareYourPledge extends React.Component {
     componentDidMount () {
@@ -20,6 +20,7 @@ class ShareYourPledge extends React.Component {
         const issues = this.props.getSelectedIssues();
         return (
             <div>
+                <Header activeRoute='share-your-pledge' />
                 <p>instructions here</p>
                 {issues.map(function(issue, i) {
                     return (
