@@ -3,13 +3,12 @@
 
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import Route from 'react-router-dom/Route';
 
 import Header from './Header';
 import Navigation from './Navigation';
-// import ChooseYourIssues from './ChooseYourIssues';
-// import MakeYourPlan from './MakeYourPlan';
-// import ShareYourPledge from './ShareYourPledge';
+import ChooseYourIssues from './ChooseYourIssues';
+import MakeYourPlan from './MakeYourPlan';
+import ShareYourPledge from './ShareYourPledge';
 
 import './App.css';
 
@@ -25,7 +24,7 @@ class App extends Component {
           {/* TODO: make activeRoute dynamic based on params */}
           <Header activeRoute='choose-your-issues' />
 
-          {/* <Route
+          <Route
             exact path={routes.CHOOSE_YOUR_ISSUES}
             component={ChooseYourIssues}
           />
@@ -36,7 +35,7 @@ class App extends Component {
           <Route
             exact path={routes.SHARE_YOUR_PLEDGE}
             component={ShareYourPledge}
-          /> */}
+          />
 
         </div>
       </Router>
@@ -45,28 +44,4 @@ class App extends Component {
 }
 
 export default App;
-
-// import logo from './logo.svg';
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <p>
-//             Edit <code>src/App.js</code> and save to reload.
-//           </p>
-//           <a
-//             className="App-link"
-//             href="https://reactjs.org"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Learn React
-//           </a>
-//         </header>
-//       </div>
-//     );
-//   }
-// }
 
