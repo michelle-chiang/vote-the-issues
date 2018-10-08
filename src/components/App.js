@@ -15,6 +15,25 @@ import './App.css';
 import * as routes from '../constants/routes';
 
 class App extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          selectedIssues: []
+      }
+  }
+  getIssueSelection = () => {
+    return this.state.selectedIssues;
+  }
+  handleIssueSelection = (e)  => {
+    const newSelection = e.target.value;
+    let newSelectionArray;
+    if (this.state.selectedIssues.indexOf(newSelection) > -1) {
+        newSelectionArray = this.state.selectedIssues.filter(x => x !== newSelection);
+    } else {
+        newSelectionArray = [...this.state.selectedIssues, newSelection];
+    }
+    this.setState({ selectedIssues: newSelectionArray });
+  }
   render () {
     return (
       <Router>
@@ -26,15 +45,18 @@ class App extends Component {
 
           <Route
             exact path={routes.CHOOSE_YOUR_ISSUES}
-            component={ChooseYourIssues}
+            render={(props) => <ChooseYourIssues {...props} 
+              update={this.handleIssueSelection}
+              getSelectedIssues={this.getIssueSelection} />}
           />
           <Route
             exact path={routes.MAKE_YOUR_PLAN}
-            component={MakeYourPlan}
+            render={(props) => <MakeYourPlan {...props} />}
           />
           <Route
             exact path={routes.SHARE_YOUR_PLEDGE}
-            component={ShareYourPledge}
+            render={(props) => <ShareYourPledge {...props} 
+              getSelectedIssues={this.getIssueSelection} />}
           />
 
         </div>

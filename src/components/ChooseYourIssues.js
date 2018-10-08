@@ -26,24 +26,6 @@ const categoryInfo = {
 
 // helped by https://lorenstewart.me/2016/10/31/react-js-forms-controlled-components/
 class ChooseYourIssues extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedIssues: []
-        }
-    }
-
-    handleIssueSelection = (e)  => {
-        const newSelection = e.target.value;
-        let newSelectionArray;
-        if (this.state.selectedIssues.indexOf(newSelection) > -1) {
-            newSelectionArray = this.state.selectedIssues.filter(x => x !== newSelection);
-        } else {
-            newSelectionArray = [...this.state.selectedIssues, newSelection];
-        }
-        this.setState({ selectedIssues: newSelectionArray });
-    }
-
     render() {
         return (
             <div>
@@ -53,8 +35,8 @@ class ChooseYourIssues extends React.Component {
                         <IssueSelector 
                             key={category}
                             category={category}
-                            controlFunc={this.handleIssueSelection}
-                            selectedOptions={this.state.selectedIssues}
+                            controlFunc={this.props.update}
+                            selectedOptions={this.props.getSelectedIssues()}
                         />
                     );
                 })}
