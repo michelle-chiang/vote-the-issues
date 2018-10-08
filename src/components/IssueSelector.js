@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './IssueSelector.css';
+
 import issueData from '../constants/issues';
 
 const IssueSelector = (props) => (
-  <div>
+  <div className='issue-selector'>
     <label className='category-label'>{props.category}</label>
     <div className='checkbox-group'>
       {issueData[props.category].map(function(issue, i) {

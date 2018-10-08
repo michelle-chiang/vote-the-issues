@@ -22,7 +22,8 @@ class App extends Component {
   constructor(props) {
       super(props);
       this.state = {
-          selectedIssues: []
+        selectedIssues: []
+          // selectedIssues: ['description 1 that is really really long', 'hi 1']
       }
   }
   getIssueSelection = () => {

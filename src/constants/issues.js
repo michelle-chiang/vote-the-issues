@@ -1,6 +1,6 @@
 const issueData = {
     'Category 1': [
-        'description 1',
+        'description 1 that is really really long',
         'description 2',
         'description 3'
     ],
