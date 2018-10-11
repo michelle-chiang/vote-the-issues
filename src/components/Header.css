@@ -3,5 +3,19 @@
 }
 
 .header {
-    background-color: coral;
+	display:block;
+	font-size:18px;
+	width:100%;
+}
+
+.header #first {
+	margin-left:5%;
+}
+
+.header #second {
+	margin-left:20%;
+}
+
+.header #third {
+	margin-left:35%;
 }
