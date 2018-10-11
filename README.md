@@ -2,6 +2,8 @@
 View at [vote-the-issues.firebaseapp.com](https://vote-the-issues.firebaseapp.com).
 
 ## Local Development
+`npm install`
+
 `npm start`
 
 ## Deploy
