@@ -1,0 +1,14 @@
+.navbar .navbar-toggle .icon-bar {
+  background-color: #000000; /* Changes regular toggle color */
+}
+
+.navbar .navbar-toggle {
+	float: left;
+	margin-left: 5 px;
+}
+
+.navbar .navbar-brand {
+	float: right;
+	margin-right: 5 px;
+	font-style: italic;
+}
