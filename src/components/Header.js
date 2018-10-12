@@ -8,7 +8,8 @@ class Header extends React.Component {
         return (
             <div className='header'>
                 <p className={activeRoute === 'choose-your-issues' ? 'active' : ''} id="first">Choose your issues.</p>
-                <p className={activeRoute === 'make-your-plan' ? 'active' : ''} id="second">Make your plan.</p>
+                {/* TODO: Re-enable when 'Make Your Plan' page is implemented */}
+                {/* <p className={activeRoute === 'make-your-plan' ? 'active' : ''} id="second">Make your plan.</p> */}
                 <p className={activeRoute === 'share-your-pledge' ? 'active' : ''} id="third">Share your pledge.</p>
             </div>
         )

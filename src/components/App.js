@@ -11,7 +11,8 @@ import {
 
 import Navigation from './Navigation';
 import ChooseYourIssues from './ChooseYourIssues';
-import MakeYourPlan from './MakeYourPlan';
+// TODO: Re-enable when 'Make Your Plan' page is implemented
+// import MakeYourPlan from './MakeYourPlan';
 import ShareYourPledge from './ShareYourPledge';
 
 import './App.css';
@@ -23,7 +24,6 @@ class App extends Component {
       super(props);
       this.state = {
         selectedIssues: []
-          // selectedIssues: ['description 1 that is really really long', 'hi 1']
       }
   }
   getIssueSelection = () => {
@@ -47,19 +47,20 @@ class App extends Component {
           <Navigation />
 
           {/* Set default home page to Choose Your Issues */}
-          <Redirect from='/' exact to={routes.CHOOSE_YOUR_ISSUES} />
+          <Redirect exact from='/' exact to={routes.CHOOSE_YOUR_ISSUES} />
           
-          {/* Render pages as when routed to */}
+          {/* Render specific pages when routed to */}
           <Route
             exact path={routes.CHOOSE_YOUR_ISSUES}
             render={(props) => <ChooseYourIssues {...props} 
               update={this.handleIssueSelection}
               getSelectedIssues={this.getIssueSelection} />}
           />
-          <Route
+          {/* TODO: Implement 'Make Your Plan' page */}
+          {/* <Route
             exact path={routes.MAKE_YOUR_PLAN}
             render={(props) => <MakeYourPlan {...props} />}
-          />
+          /> */}
           <Route
             exact path={routes.SHARE_YOUR_PLEDGE}
             render={(props) => <ShareYourPledge {...props} 

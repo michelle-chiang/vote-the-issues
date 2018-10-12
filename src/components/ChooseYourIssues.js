@@ -24,7 +24,9 @@ class ChooseYourIssues extends React.Component {
                     );
                 })}
                 
-                <p><Link to={routes.MAKE_YOUR_PLAN}>Make your plan >>></Link></p>
+                {/* TODO: Re-enable when 'Make Your Plan' page is implemented */}
+                {/* <p><Link to={routes.MAKE_YOUR_PLAN}>Make your plan >>></Link></p> */}
+                <p><Link to={routes.SHARE_YOUR_PLEDGE}>Share Your Pledge >>></Link></p>
             </div>
         )
     }
