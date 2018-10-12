@@ -8,6 +8,7 @@ class ShareYourPledge extends React.Component {
         this.colorPalette = ['#5FD0D4', '#FD2E58', '#EFA93A', '#343D3A', '#F1E7DE',  '#EFA93A', '#343D3A', '#FD2E58'];
         this.resolution = 1080;
     }
+
     componentDidMount () {
         const issues = this.props.getSelectedIssues();
 
@@ -21,6 +22,47 @@ class ShareYourPledge extends React.Component {
             this.updateCanvas(issues[i], frameWidth, i);
         }
     }
+
+    openTab (url) {
+        // Create link in memory
+        var a = window.document.createElement("a");
+        a.target = '_blank';
+        a.href = url;
+     
+        // Dispatch fake click
+        var e = window.document.createEvent("MouseEvents");
+        e.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        a.dispatchEvent(e);
+    };
+
+    downloadImages = (issues) => {
+        // Check if browser is Safari
+        var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+               navigator.userAgent &&
+               navigator.userAgent.indexOf('CriOS') === -1 &&
+               navigator.userAgent.indexOf('FxiOS') === -1;
+
+        // Adapted from https://stackoverflow.com/questions/2339440/download-multiple-files-with-a-single-action
+        for (var i = 0; i < issues.length; i++) {
+            var canvas = document.getElementById(`issue_${i}`);
+            var imgLink = canvas.toDataURL('image/jpg');
+            
+            if (isSafari) {
+                this.openTab(imgLink);
+            } else {
+                var link = document.createElement('a');
+                link.style.display = 'none';
+                document.body.appendChild(link);
+    
+                link.setAttribute('download', `issue_${i}`);
+                link.setAttribute('href', imgLink);
+                link.click()
+    
+                document.body.removeChild(link);
+            }
+        }
+    }
+
     updateCanvas (text, frameWidth, i) {
         // from https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
         function wrapText(context, text, x, y, maxWidth, lineHeight) {
@@ -63,23 +105,6 @@ class ShareYourPledge extends React.Component {
         // Set display size
         canvas.style.width = frameWidth;
         canvas.style.height = frameWidth;   
-    }
-
-    downloadImages = (issues) => {
-        // Adapted from https://stackoverflow.com/questions/2339440/download-multiple-files-with-a-single-action
-        for (var i = 0; i < issues.length; i++) {
-            var link = document.createElement('a');
-            link.style.display = 'none';
-            document.body.appendChild(link);
-
-            link.setAttribute('download', `issue_${i}`);
-            var canvas = document.getElementById(`issue_${i}`);
-            var imgLink = canvas.toDataURL('image/jpg');
-            link.setAttribute('href', imgLink);
-            link.click()
-
-            document.body.removeChild(link);
-        }
     }
 
     render() {
