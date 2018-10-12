@@ -1,0 +1,13 @@
+.plan {
+	padding-top: 20px;
+}
+.form-group {
+	font-size:10px;
+	display: inline;
+}
+#vote-method {
+	margin:5px;
+}
+#when {
+	margin:5px;
+}

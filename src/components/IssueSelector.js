@@ -6,12 +6,11 @@ import issueData from '../constants/issues';
 
 const IssueSelector = (props) => (
   <div className='issue-selector'>
-    <hr class = "multi-bar"></hr>
     <div class="row">
       <div class="col-xs-4 bar-left"></div>
       <div class="col-xs-8 bar-right"></div>
     </div>
-    <div class="row">
+    <div class="row multi-bar">
       <div class="col-xs-4">
         <label className='category-label'>{props.category}</label>
       </div>
@@ -21,7 +20,7 @@ const IssueSelector = (props) => (
         return (
             <div class="row">
               <div class="col-xs-8 leftbox">
-                <label key={issue} className='issue-label '>
+                <label key={issue} className='issue-label'>
                   <input
                     className='form-checkbox'
                     name={issue}
@@ -36,6 +35,7 @@ const IssueSelector = (props) => (
           );
         })}
     </div>
+
   </div>
 );
 

@@ -28,6 +28,10 @@ class ChooseYourIssues extends React.Component {
                         );
                     })}
                 </div>
+                <div class="row multi-bar">
+                  <div class="col-xs-4 bar-left"></div>
+                  <div class="col-xs-8 bar-right"></div>
+                </div>
                 <p class="footer"><Link to={routes.MAKE_YOUR_PLAN}>Make your plan >>></Link></p>
             </div>
         )

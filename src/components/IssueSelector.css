@@ -10,12 +10,6 @@
    border-top:0;
 }
 
-.multi-bar {
-	height: 3px;
-	background-image: linear-gradient(to right, #D3D3D3 25%, #000000 75%);
-	display:none;
-}
-
 .bar-left {
 	height: 3px;
 	background-color: #D3D3D3;
