@@ -29,7 +29,6 @@ const IssueSelector = (props) => (
                     value={issue}
                     checked={props.selectedOptions.indexOf(issue) > -1}
                     type='checkbox'
-                    class='rounded-check'
                   /> {issue}
                 </label>
               </div>
