@@ -58,7 +58,8 @@ class App extends Component {
           />
           <Route
             exact path={routes.MAKE_YOUR_PLAN}
-            render={(props) => <MakeYourPlan {...props} />}
+            render={(props) => <MakeYourPlan {...props}
+              getSelectedIssues={this.getIssueSelection} />}
           />
           <Route
             exact path={routes.SHARE_YOUR_PLEDGE}

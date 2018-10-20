@@ -16,7 +16,7 @@ class ChooseYourIssues extends React.Component {
         return (
             <div>
                 <Header activeRoute='choose-your-issues' />
-                <div class="container">
+                <div className="container">
                     {Object.keys(issueData).map(category => {
                         return (
                             <IssueSelector 
@@ -26,13 +26,13 @@ class ChooseYourIssues extends React.Component {
                                 selectedOptions={this.props.getSelectedIssues()}
                             />
                         );
-                    })}
+                    })}    
                 </div>
-                <div class="row multi-bar">
-                  <div class="col-xs-4 bar-left"></div>
-                  <div class="col-xs-8 bar-right"></div>
+                <div className="row multi-bar">
+                  <div className="col-xs-4 bar-left"></div>
+                  <div className="col-xs-8 bar-right"></div>
                 </div>
-                <p class="footer"><Link to={routes.MAKE_YOUR_PLAN}>Make your plan >>></Link></p>
+                <p className="footer"><Link to={routes.MAKE_YOUR_PLAN}>Make your plan >>></Link></p>
             </div>
         )
     }

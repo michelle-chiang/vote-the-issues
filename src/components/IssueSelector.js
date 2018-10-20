@@ -6,20 +6,25 @@ import issueData from '../constants/issues';
 
 const IssueSelector = (props) => (
   <div className='issue-selector'>
-    <div class="row">
-      <div class="col-xs-4 bar-left"></div>
-      <div class="col-xs-8 bar-right"></div>
+    <div className="row">
+      <div className="col-xs-4 bar-left"></div>
+      <div className="col-xs-8 bar-right"></div>
     </div>
-    <div class="row multi-bar">
-      <div class="col-xs-4">
+    <div className="row multi-bar">
+      <div className="col-xs-4">
         <label className='category-label'>{props.category}</label>
       </div>
     </div>
     <div className='checkbox-group'>
       {issueData[props.category].map(function(issue, i) {
+        if (props.selectedOptions.indexOf(issue) > -1) {
+          // userdata.length = 0;
+          // userdata.push({issue});
+          // console.log(userdata)
+        }
         return (
-            <div class="row">
-              <div class="col-xs-8 leftbox">
+            <div className="row">
+              <div className="col-xs-8 leftbox">
                 <label key={issue} className='issue-label'>
                   <input
                     className='form-checkbox'

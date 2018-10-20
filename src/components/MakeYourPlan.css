@@ -11,3 +11,10 @@
 #when {
 	margin:5px;
 }
+ul {
+	list-style: none;
+}
+.p1 {
+	position: relative;
+	z-index: 10;
+}
