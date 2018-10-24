@@ -14,7 +14,7 @@ const issueData = {
         'The culture wars are back and we can’t let neo-Nazis gain an inch.',
         'Flint still doesn’t have reliable, lead-free drinking water.'
     ],
-    'Hey Congress -- Get Your Act Together!': [
+    'Hey Congress — Get Your Act Together!': [
         'Weapons of war have no place in schoolhouse or police stations.',
         'Congress shouldn\'t ransom undocumented children to buy Trump a wall.',
         'hi 3'
