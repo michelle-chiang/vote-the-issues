@@ -13,7 +13,6 @@ import Navigation from './Navigation';
 import ChooseYourIssues from './ChooseYourIssues';
 import MakeYourPlan from './MakeYourPlan';
 import ShareYourPledge from './ShareYourPledge';
-import About from './About';
 
 import './App.css';
 
@@ -65,11 +64,6 @@ class App extends Component {
           <Route
             exact path={routes.SHARE_YOUR_PLEDGE}
             render={(props) => <ShareYourPledge {...props} 
-              getSelectedIssues={this.getIssueSelection} />}
-          />
-          <Route
-            exact path={routes.ABOUT}
-            render={(props) => <About {...props} 
               getSelectedIssues={this.getIssueSelection} />}
           />
         </div>
