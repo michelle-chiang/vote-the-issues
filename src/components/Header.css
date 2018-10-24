@@ -3,19 +3,34 @@
 }
 
 .header {
-	display:block;
+	display:inline;
 	font-size:18px;
 	width:100%;
 }
 
-.header #first {
-	margin-left:5%;
+.header p {
+	display: inline;
+	padding: 10px;
 }
 
-.header #second {
-	margin-left:20%;
-}
+@media only screen and (max-width: 600px) {
+    .header {
+    	display: block;
+    }
+    .header p {
+    	display: block;
+    	padding: 0;
+    }
+    .header #first {
+		margin-left:5%;
+	}
 
-.header #third {
-	margin-left:35%;
+	.header #second {
+		margin-left:20%;
+	}
+
+	.header #third {
+		margin-left:35%;
+	}
+
 }

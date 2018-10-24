@@ -58,7 +58,7 @@ class MakeYourPlan extends React.Component {
 	                </div>
                     <div className="row">
     	                <div className="col-xs-4">
-                            <p>Confirm Rankings</p>
+                            <p>Confirm Issues</p>
                         </div>
                         <div className="col-xs-8">
                             <ul className="sortable" id="rankings">
