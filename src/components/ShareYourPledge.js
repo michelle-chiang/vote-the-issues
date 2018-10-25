@@ -24,29 +24,6 @@ class ShareYourPledge extends React.Component {
         }
     }
 
-    downloadImages = (issues) => {
-        // Adapted from https://stackoverflow.com/questions/2339440/download-multiple-files-with-a-single-action
-        for (var i = 0; i < issues.length; i++) {
-            const canvas = document.getElementById(`issue_${i}`);
-            const imgLink = canvas.toDataURL('image/jpg');
-            
-            let link = document.getElementById(`link_${i}`);
-            link.setAttribute('download', `issue_${i}`);
-            link.setAttribute('href', imgLink);
-            link.click()
-        }
-    }
-
-    downloadImage = (i) => {
-        const canvas = document.getElementById(`issue_${i}`);
-        const imgLink = canvas.toDataURL('image/jpg');
-
-        let link = document.getElementById(`link_${i}`);
-        link.setAttribute('download', `issue_${i}`);
-        link.setAttribute('href', imgLink);
-        link.click();
-    }
-
     updateCanvas (text, frameWidth, i) {
         // from https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
         function wrapText(context, text, x, y, maxWidth, lineHeight) {
@@ -89,6 +66,14 @@ class ShareYourPledge extends React.Component {
         // Set display size
         canvas.style.width = frameWidth;
         canvas.style.height = frameWidth;   
+
+        // Add click event listener
+        canvas.addEventListener('click', function(event) {
+            const imgLink = canvas.toDataURL('image/jpg');
+            let link = document.getElementById(`link_${i}`);
+            link.setAttribute('download', `issue_${i}`);
+            link.setAttribute('href', imgLink);
+        })
     }
 
     render() {
@@ -96,7 +81,8 @@ class ShareYourPledge extends React.Component {
         return (
             <div>
                 <Header activeRoute='share-your-pledge' />
-                <a id='download' onClick={() => this.downloadImages(issues)}>Download images!<br /></a>
+                <p>Click on each image to download, then share on your favorite social media platform!</p>
+                {/* TODO: display plan information */}
                 {issues.map(function(issue, i) {
                     return (
                         <a key={i} id={`link_${i}`}>

@@ -6,7 +6,8 @@ import React, { Component } from 'react';
 import { 
   Redirect,
   BrowserRouter as Router, 
-  Route 
+  Route,
+  Switch 
 } from 'react-router-dom';
 
 import Navigation from './Navigation';
@@ -49,6 +50,7 @@ class App extends Component {
           {/* Set default home page to Choose Your Issues */}
           <Redirect exact from='/' to={routes.CHOOSE_YOUR_ISSUES} />
           
+          <Switch>
           {/* Render specific pages when routed to */}
           <Route
             exact path={routes.CHOOSE_YOUR_ISSUES}
@@ -71,6 +73,14 @@ class App extends Component {
             render={(props) => <About {...props} 
               getSelectedIssues={this.getIssueSelection} />}
           />
+
+          {/* Hack: redict 404 error from image download to 
+          Share Your Pledge page */}
+          <Route 
+            render={(props) => <ShareYourPledge {...props} 
+            getSelectedIssues={this.getIssueSelection} />}
+          />
+        </Switch>
 
         </div>
       </Router>
