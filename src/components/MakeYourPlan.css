@@ -1,0 +1,32 @@
+.plan {
+	padding-top: 20px;
+	text-align: center;
+}
+.form-group {
+/*	font-size:10px;
+*/	display: inline;
+	width: 100%;
+}
+#vote-method {
+	margin:5px;
+}
+#when {
+	margin:5px;
+}
+#bda {
+	margin:5px;
+}
+#buddy {
+	width: 100%;
+}
+.form-control {
+	width: 100%;
+	text-align: center;
+}
+ul {
+	list-style: none;
+}
+.p1 {
+	position: relative;
+	z-index: 10;
+}

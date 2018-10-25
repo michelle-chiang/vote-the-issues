@@ -18,10 +18,9 @@ const Navigation = () =>
 	    </div>
 	    <div className="collapse navbar-collapse" id="myNavbar">
 	      <ul className="nav navbar-nav">
-	        <li><Link to={routes.CHOOSE_YOUR_ISSUES}>Choose your issues.</Link></li>
-					{/* TODO: Re-enable when 'Make Your Plan' page is implemented */}
-					{/* <li><Link to={routes.MAKE_YOUR_PLAN}>Make your plan.</Link></li>  */}
-	        <li><Link to={routes.SHARE_YOUR_PLEDGE}>Share your pledge.</Link></li> 
+	        <li><Link to={routes.CHOOSE_YOUR_ISSUES}>Pledge.</Link></li>
+	        <li><Link to={routes.MAKE_YOUR_PLAN}>Make your plan.</Link></li> 
+	        <li><Link to={routes.ABOUT}>About.</Link></li> 
 	      </ul>
 	    </div>
 	  </div>

@@ -1,0 +1,13 @@
+.footer {
+	float: right;
+	font-size: 18px;
+	text-decoration: none;
+	margin-right: 5px;
+}
+.footer a {
+	color: #000000;
+}
+.container {
+	padding:10px;
+	display:block;
+}

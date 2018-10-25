@@ -14,6 +14,7 @@ import ChooseYourIssues from './ChooseYourIssues';
 // TODO: Re-enable when 'Make Your Plan' page is implemented
 // import MakeYourPlan from './MakeYourPlan';
 import ShareYourPledge from './ShareYourPledge';
+import About from './About';
 
 import './App.css';
 
@@ -56,16 +57,22 @@ class App extends Component {
               update={this.handleIssueSelection}
               getSelectedIssues={this.getIssueSelection} />}
           />
-          {/* TODO: Implement 'Make Your Plan' page */}
-          {/* <Route
+          <Route
             exact path={routes.MAKE_YOUR_PLAN}
-            render={(props) => <MakeYourPlan {...props} />}
-          /> */}
+            render={(props) => <MakeYourPlan {...props}
+              getSelectedIssues={this.getIssueSelection} />}
+          />
           <Route
             exact path={routes.SHARE_YOUR_PLEDGE}
             render={(props) => <ShareYourPledge {...props} 
               getSelectedIssues={this.getIssueSelection} />}
           />
+          <Route
+            exact path={routes.ABOUT}
+            render={(props) => <About {...props} 
+              getSelectedIssues={this.getIssueSelection} />}
+          />
+
         </div>
       </Router>
     )
