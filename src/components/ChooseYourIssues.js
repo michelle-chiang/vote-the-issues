@@ -12,6 +12,16 @@ import './ChooseYourIssues.css';
 
 // helped by https://lorenstewart.me/2016/10/31/react-js-forms-controlled-components/
 class ChooseYourIssues extends React.Component {
+    componentDidMount () {
+        // send page hit to Google Analytics
+        const gtag = window.gtag;
+        if (window.location.hostname !== 'localhost') {
+            gtag('config', 'UA-128119729-1', {
+                'page_location': window.location.href,
+                'page_path': window.location.pathname,
+            });
+        };
+    }
     render() {
         return (
             <div>

@@ -8,6 +8,16 @@ import * as routes from '../constants/routes';
 import './MakeYourPlan.css';
 
 class MakeYourPlan extends React.Component {
+    componentDidMount () {
+        // Send page hit to Google Analytics
+        const gtag = window.gtag;
+        if (window.location.hostname !== 'localhost') {
+            gtag('config', 'UA-128119729-1', {
+                'page_location': window.location.href,
+                'page_path': window.location.pathname,
+            });
+        };
+    }
     render() {
         const issues = this.props.getSelectedIssues();
         return (

@@ -11,12 +11,20 @@ class ShareYourPledge extends React.Component {
     }
 
     componentDidMount () {
-        const issues = this.props.getSelectedIssues();
+        // Send page hit to Google Analytics
+        if (window.location.hostname !== 'localhost') {
+            const gtag = window.gtag;
+            gtag('config', 'UA-128119729-1', {
+                'page_location': window.location.href,
+                'page_path': window.location.pathname,
+            });
+        };
 
+        const issues = this.props.getSelectedIssues();
         // Calculate image display size
         // TODO: figure out line breaks?
-        const w = window.innerWidth - 50;
-        const frameWidth = `${w / issues.length}px`
+        const w = window.innerWidth;
+        const frameWidth = `${w / issues.length - 50}px`
         
         // Add text to images
         for (let i = 0; i < issues.length; i++) {
@@ -69,6 +77,15 @@ class ShareYourPledge extends React.Component {
 
         // Add click event listener
         canvas.addEventListener('click', function(event) {
+            // send event to Google Analytics
+            if (window.location.hostname !== 'localhost') {
+                const gtag = window.gtag;
+                gtag('event', 'download', {
+                    'event_label': text,
+                    'event_category': 'issue_download'
+                })
+            };
+
             const imgLink = canvas.toDataURL('image/jpg');
             let link = document.getElementById(`link_${i}`);
             link.setAttribute('download', `issue_${i}`);
