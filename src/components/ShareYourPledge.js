@@ -24,45 +24,27 @@ class ShareYourPledge extends React.Component {
         }
     }
 
-    openTab (url) {
-        // Create link in memory
-        var a = window.document.createElement("a");
-        a.target = '_blank';
-        a.href = url;
-     
-        // Dispatch fake click
-        var e = window.document.createEvent("MouseEvents");
-        e.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-        a.dispatchEvent(e);
-    };
-
     downloadImages = (issues) => {
-        // Check if browser is Safari
-        var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
-               navigator.userAgent &&
-               navigator.userAgent.indexOf('CriOS') === -1 &&
-               navigator.userAgent.indexOf('FxiOS') === -1;
-
         // Adapted from https://stackoverflow.com/questions/2339440/download-multiple-files-with-a-single-action
         for (var i = 0; i < issues.length; i++) {
-            var canvas = document.getElementById(`issue_${i}`);
-            var imgLink = canvas.toDataURL('image/jpg');
+            const canvas = document.getElementById(`issue_${i}`);
+            const imgLink = canvas.toDataURL('image/jpg');
             
-            if (isSafari) {
-                console.log('isSafari');
-                this.openTab(imgLink);
-            } else {
-                var link = document.createElement('a');
-                link.style.display = 'none';
-                document.body.appendChild(link);
-    
-                link.setAttribute('download', `issue_${i}`);
-                link.setAttribute('href', imgLink);
-                link.click()
-    
-                document.body.removeChild(link);
-            }
+            let link = document.getElementById(`link_${i}`);
+            link.setAttribute('download', `issue_${i}`);
+            link.setAttribute('href', imgLink);
+            link.click()
         }
+    }
+
+    downloadImage = (i) => {
+        const canvas = document.getElementById(`issue_${i}`);
+        const imgLink = canvas.toDataURL('image/jpg');
+
+        let link = document.getElementById(`link_${i}`);
+        link.setAttribute('download', `issue_${i}`);
+        link.setAttribute('href', imgLink);
+        link.click();
     }
 
     updateCanvas (text, frameWidth, i) {
@@ -116,7 +98,11 @@ class ShareYourPledge extends React.Component {
                 <Header activeRoute='share-your-pledge' />
                 <a id='download' onClick={() => this.downloadImages(issues)}>Download images!<br /></a>
                 {issues.map(function(issue, i) {
-                    return <canvas key={i} id={`issue_${i}`}></canvas>
+                    return (
+                        <a key={i} id={`link_${i}`}>
+                            <canvas id={`issue_${i}`}></canvas>
+                        </a>
+                    );
                 })}
             </div>
         )
