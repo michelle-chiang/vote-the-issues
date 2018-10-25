@@ -24,7 +24,7 @@ const IssueSelector = (props) => (
             // console.log(userdata)
           }
           return (
-              <div className="row">
+              <div className="row" key={`${issue}_row${i}`}>
                 <div className="col-xs-8 leftbox">
                   <label key={issue} className='issue-label'>
                     <input

@@ -47,7 +47,7 @@ class App extends Component {
           <Navigation />
 
           {/* Set default home page to Choose Your Issues */}
-          <Redirect exact from='/' exact to={routes.CHOOSE_YOUR_ISSUES} />
+          <Redirect exact from='/' to={routes.CHOOSE_YOUR_ISSUES} />
           
           {/* Render specific pages when routed to */}
           <Route

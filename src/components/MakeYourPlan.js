@@ -63,7 +63,7 @@ class MakeYourPlan extends React.Component {
                         <div className="col-xs-8">
                             <ul className="sortable" id="rankings">
                                 {issues.map(function(issue, i) {
-                                    return <li id={`issue_${i}`}>{issues[i]}</li>
+                                    return <li key={i} id={`issue_${i}`}>{issues[i]}</li>
                                 })}
                             </ul>
                         </div>
