@@ -6,7 +6,7 @@ import * as routes from '../constants/routes';
 import './Navigation.css';
 
 const Navigation = () =>
-    <nav className="navbar navbar-left">
+  <nav className="navbar navbar-left">
 	  <div className="container-fluid">
 	    <div className="navbar-header">
 	      <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

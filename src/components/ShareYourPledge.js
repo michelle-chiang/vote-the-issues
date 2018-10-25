@@ -48,6 +48,7 @@ class ShareYourPledge extends React.Component {
             var imgLink = canvas.toDataURL('image/jpg');
             
             if (isSafari) {
+                console.log('isSafari');
                 this.openTab(imgLink);
             } else {
                 var link = document.createElement('a');
