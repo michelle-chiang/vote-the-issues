@@ -11,8 +11,7 @@ import {
 
 import Navigation from './Navigation';
 import ChooseYourIssues from './ChooseYourIssues';
-// TODO: Re-enable when 'Make Your Plan' page is implemented
-// import MakeYourPlan from './MakeYourPlan';
+import MakeYourPlan from './MakeYourPlan';
 import ShareYourPledge from './ShareYourPledge';
 import About from './About';
 
