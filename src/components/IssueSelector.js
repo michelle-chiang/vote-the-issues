@@ -18,6 +18,7 @@ const IssueSelector = (props) => (
       </div>
       <div className='checkbox-group'>
         {issueData[props.category].map(function(issue, i) {
+          // TODO (Michelle): check if below code can be deleted
           if (props.selectedOptions.indexOf(issue) > -1) {
             // userdata.length = 0;
             // userdata.push({issue});

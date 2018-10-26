@@ -35,20 +35,32 @@ class MakeYourPlan extends React.Component {
                     <div className="row middle-row">
                 		<div className="form-group">
                             <div className="col-xs-4">
-                			<select className="form-con†rol" id="vote-method">
+                            <select 
+                                className="form-con†rol" 
+                                id="vote-method"
+                                onChange={(e) => this.props.update(e, "vote-method")}
+                            >
 	        					<option id="person"> in-person </option>
 	        					<option id="mail"> by mail </option>
 	        				</select>
                             </div>
                             <div className="col-xs-4">
-	        				<select className="form-con†rol" id="bda">
+                            <select 
+                                className="form-con†rol" 
+                                id="bda"
+                                onChange={(e) => this.props.update(e, "bda")}
+                            >
             					<option id="before"> before </option>
             					<option id="during"> during </option>
             					<option id="after"> after </option>
             				</select>
                             </div>
                             <div className="col-xs-4">
-                			<select className="form-con†rol" id="when">
+                            <select 
+                                className="form-con†rol" 
+                                id="when"
+                                onChange={(e) => this.props.update(e, "when")}
+                            >
             					<option id="breakfast"> breakfast </option>
             					<option id="lunch"> lunch </option>
             					<option id="dinner"> dinner </option>
@@ -58,17 +70,18 @@ class MakeYourPlan extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
+                    {/* TODO: replace with "on" and date picker */}
+                    {/* <div className="row">
         				<p> with </p>
         				<input type="text" id="buddy"></input>
-            		</div>
+            		</div> */}
                 	<div className="row multi-bar">
 	                  <div className="col-xs-4 bar-left"></div>
 	                  <div className="col-xs-8 bar-right"></div>
 	                </div>
                     <div className="row">
     	                <div className="col-xs-4">
-                            <p>Confirm Rankings</p>
+                            <p>Confirm Issues</p>
                         </div>
                         <div className="col-xs-8">
                             <ul className="sortable" id="rankings">
@@ -80,11 +93,12 @@ class MakeYourPlan extends React.Component {
                     </div>
                 	<p className="footer"><Link to={routes.SHARE_YOUR_PLEDGE}>Share your pledge >>></Link></p>
                 </div>
-            <script>
+            {/* TODO (Michelle): verify that this and html5sortable package can be removed */}
+            {/* <script>
                 eval(var el = document.getElementById('rankings');
                 console.log(el);
                 var sortable = Sortable.create(el);)
-            </script>
+            </script> */}
         </div>
         )
     }

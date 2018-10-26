@@ -24,11 +24,21 @@ class App extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        selectedIssues: []
+        selectedIssues: [],
+        plan: {
+          // TODO: change these from hard-coded defaults
+          'vote-method': 'in-person',
+          'bda': 'before',
+          'when': 'breakfast'
+          // TODO: add date
+        }
       }
   }
   getIssueSelection = () => {
     return this.state.selectedIssues;
+  }
+  getPlan = () => {
+    return this.state.plan;
   }
   handleIssueSelection = (e)  => {
     const newSelection = e.target.value;
@@ -39,6 +49,12 @@ class App extends Component {
         newSelectionArray = [...this.state.selectedIssues, newSelection];
     }
     this.setState({ selectedIssues: newSelectionArray });
+  }
+  handlePlanSelection = (e, category) => {
+    const newSelection = e.target.value;
+    let newPlan = this.state.plan;
+    newPlan[category] = newSelection;
+    this.setState({ plan: newPlan});
   }
   render () {
     return (
@@ -55,25 +71,28 @@ class App extends Component {
           <Route
             exact path={routes.CHOOSE_YOUR_ISSUES}
             render={(props) => <ChooseYourIssues {...props} 
-              update={this.handleIssueSelection}
-              getSelectedIssues={this.getIssueSelection} />}
+            update={this.handleIssueSelection}
+            getSelectedIssues={this.getIssueSelection} />}
           />
           <Route
             exact path={routes.MAKE_YOUR_PLAN}
             render={(props) => <MakeYourPlan {...props}
-              getSelectedIssues={this.getIssueSelection} />}
+            update={this.handlePlanSelection}
+            getSelectedIssues={this.getIssueSelection} />}
           />
           <Route
             exact path={routes.SHARE_YOUR_PLEDGE}
             render={(props) => <ShareYourPledge {...props} 
-              getSelectedIssues={this.getIssueSelection} />}
+            getPlan={this.getPlan}
+            getSelectedIssues={this.getIssueSelection} />}
           />
           <Route
             exact path={routes.ABOUT}
             render={(props) => <About {...props} 
-              getSelectedIssues={this.getIssueSelection} />}
+            getSelectedIssues={this.getIssueSelection} />}
           />
 
+          {/* TODO: determine if this is actually necessary */}
           {/* Hack: redict 404 error from image download to 
           Share Your Pledge page */}
           <Route 

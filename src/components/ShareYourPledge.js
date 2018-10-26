@@ -95,13 +95,16 @@ class ShareYourPledge extends React.Component {
 
     render() {
         const issues = this.props.getSelectedIssues();
+        const plan = this.props.getPlan();
         return (
             <div>
                 <Header activeRoute='share-your-pledge' />
+                <p>{`Suggested caption: I'm voting ${plan['vote-method']} ${plan['bda']} ${plan['when']}.`}</p>
                 <p>Click on each image to download, then share on your favorite social media platform!</p>
                 {/* TODO: display plan information */}
                 {issues.map(function(issue, i) {
                     return (
+                        // eslint-disable-next-line
                         <a key={i} id={`link_${i}`}>
                             <canvas id={`issue_${i}`}></canvas>
                         </a>
