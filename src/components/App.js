@@ -62,45 +62,43 @@ class App extends Component {
         <div>
           {/* Display navigation menu */}
           <Navigation />
-
-          {/* Set default home page to Choose Your Issues */}
-          <Redirect exact from='/' to={routes.CHOOSE_YOUR_ISSUES} />
-          
           <Switch>
-          {/* Render specific pages when routed to */}
-          <Route
-            exact path={routes.CHOOSE_YOUR_ISSUES}
-            render={(props) => <ChooseYourIssues {...props} 
-            update={this.handleIssueSelection}
-            getSelectedIssues={this.getIssueSelection} />}
-          />
-          <Route
-            exact path={routes.MAKE_YOUR_PLAN}
-            render={(props) => <MakeYourPlan {...props}
-            update={this.handlePlanSelection}
-            getSelectedIssues={this.getIssueSelection} />}
-          />
-          <Route
-            exact path={routes.SHARE_YOUR_PLEDGE}
-            render={(props) => <ShareYourPledge {...props} 
-            getPlan={this.getPlan}
-            getSelectedIssues={this.getIssueSelection} />}
-          />
-          <Route
-            exact path={routes.ABOUT}
-            render={(props) => <About {...props} 
-            getSelectedIssues={this.getIssueSelection} />}
-          />
+            {/* Set default home page to Choose Your Issues */}
+            <Redirect exact from='/' to={routes.CHOOSE_YOUR_ISSUES} />
+            
+            {/* Render specific pages when routed to */}
+            <Route
+              exact path={routes.CHOOSE_YOUR_ISSUES}
+              render={(props) => <ChooseYourIssues {...props} 
+              update={this.handleIssueSelection}
+              getSelectedIssues={this.getIssueSelection} />}
+            />
+            <Route
+              exact path={routes.MAKE_YOUR_PLAN}
+              render={(props) => <MakeYourPlan {...props}
+              update={this.handlePlanSelection}
+              getSelectedIssues={this.getIssueSelection} />}
+            />
+            <Route
+              exact path={routes.SHARE_YOUR_PLEDGE}
+              render={(props) => <ShareYourPledge {...props} 
+              getPlan={this.getPlan}
+              getSelectedIssues={this.getIssueSelection} />}
+            />
+            <Route
+              exact path={routes.ABOUT}
+              render={(props) => <About {...props} 
+              getSelectedIssues={this.getIssueSelection} />}
+            />
 
-          {/* TODO: determine if this is actually necessary */}
-          {/* Hack: redict 404 error from image download to 
-          Share Your Pledge page */}
-          <Route 
-            render={(props) => <ShareYourPledge {...props} 
-            getSelectedIssues={this.getIssueSelection} />}
-          />
-        </Switch>
-
+            {/* TODO: determine if this is actually necessary */}
+            {/* Hack: redict 404 error from image download to 
+            Share Your Pledge page */}
+            <Route 
+              render={(props) => <ShareYourPledge {...props} 
+              getSelectedIssues={this.getIssueSelection} />}
+            />
+          </Switch>
         </div>
       </Router>
     )
