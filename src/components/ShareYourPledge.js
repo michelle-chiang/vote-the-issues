@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './Header';
+import './ShareYourPledge.css';
 
 
 class ShareYourPledge extends React.Component {
@@ -8,6 +9,7 @@ class ShareYourPledge extends React.Component {
         super(props);
         this.colorPalette = ['#5FD0D4', '#FD2E58', '#EFA93A', '#343D3A', '#F1E7DE',  '#EFA93A', '#343D3A', '#FD2E58'];
         this.resolution = 1080;
+        this.maxDisplayWidth = 300;
     }
 
     componentDidMount () {
@@ -24,7 +26,7 @@ class ShareYourPledge extends React.Component {
         // Calculate image display size
         // TODO: figure out line breaks?
         const w = window.innerWidth;
-        const frameWidth = `${w / issues.length - 50}px`
+        const frameWidth = `${Math.min(w / issues.length - 50, this.maxDisplayWidth)}px`
         
         // Add text to images
         for (let i = 0; i < issues.length; i++) {
@@ -105,7 +107,7 @@ class ShareYourPledge extends React.Component {
                 {issues.map(function(issue, i) {
                     return (
                         // eslint-disable-next-line
-                        <a key={i} id={`link_${i}`}>
+                        <a key={i} id={`link_${i}`} className='canvas-container'>
                             <canvas id={`issue_${i}`}></canvas>
                         </a>
                     );

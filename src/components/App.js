@@ -94,10 +94,10 @@ class App extends Component {
             {/* TODO: determine if this is actually necessary */}
             {/* Hack: redict 404 error from image download to 
             Share Your Pledge page */}
-            <Route 
+            {/* <Route 
               render={(props) => <ShareYourPledge {...props} 
               getSelectedIssues={this.getIssueSelection} />}
-            />
+            /> */}
           </Switch>
         </div>
       </Router>
