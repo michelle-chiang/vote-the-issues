@@ -17,9 +17,9 @@ class About extends React.Component {
 
                     <p>Pundits deride single-issue voters. Yet voting on the issues is the best way to reduce toxic partisanship, increase crucial voter turnout, and remind our elected officials that they should get back to governing.</p>
 
-<p> When you vote for Congress, you're voting for much more than just a candidate — you're also making a decision on crucial issues facing America today.</p>
+<p> When you vote for Congress, you’re voting for much more than just a candidate — you’re also making a decision on crucial issues facing America today.</p>
 
-<p> Browse the issues and then make a pledge to tell your friends you're voting on the issues on November 6th.</p>
+<p> Browse the issues and then make a pledge to tell your friends you’re voting on the issues on November 6th.</p>
 
 
 <b>WHAT WE BELIEVE</b>
