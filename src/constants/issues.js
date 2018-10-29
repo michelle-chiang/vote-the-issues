@@ -21,7 +21,7 @@ const issueData = {
     ],
     'Economic Sanity': [
         'We need a livable federal minimum wage.',
-        'Cutting taxes on the wealthy is just plain illogical.'.
+        'Cutting taxes on the wealthy is just plain illogical.',
         'It’s okay to be jealous of California, but eliminating the state tax deduction is just mean-spirited.'
     ],
     'Civil Rights': [
