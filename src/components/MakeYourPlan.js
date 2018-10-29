@@ -39,7 +39,7 @@ class MakeYourPlan extends React.Component {
             <div> 
                 <Header activeRoute='make-your-plan' />
                 <div className="container plan">
-                    <p>Making a concrete plan increases voter turnout by XX%. How are you getting to the polls?</p>
+                    <p>Making a concrete plan drives up voter turnout. How are you getting to the polls?</p>
                     <div className="row multi-bar">
                       <div className="col-xs-4 bar-left"></div>
                       <div className="col-xs-8 bar-right"></div>
@@ -83,12 +83,12 @@ class MakeYourPlan extends React.Component {
                     </div>
                     <div className="row">
                         <div className="col-xs-4">
-                            <p>Confirm Rankings</p>
+                            <p>Your Issues</p>
                         </div>
                         <div className="col-xs-8">
                             <ul className="sortable" id="rankings">
                                 {issues.map(function(issue, i) {
-                                    return <li key={i} id={`issue_${i}`}>{issues[i]}</li>
+                                    return <li key={i} id={`issue_${i}`} className="issue">{issues[i]}</li>
                                 })}
                             </ul>
                         </div>

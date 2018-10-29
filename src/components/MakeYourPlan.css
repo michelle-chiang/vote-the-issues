@@ -30,3 +30,9 @@ ul {
 	position: relative;
 	z-index: 10;
 }
+.issue {
+	padding-bottom: 15px;
+}
+.sortable {
+	width: 100%;
+}
