@@ -38,8 +38,8 @@ class About extends React.Component {
 <b>COMMENTS?</b>
 
 <p>We’re not party-affiliated, but that doesn’t mean we’re not political. Sorry. (Not sorry.)</p>
-<p>Is there any issue you don’t see? Let us know about it!</p>
-<p>We put effort into building this, and we appreciate any fan mail you want to send our way. Tag us on Instagram @votetheissues.org.</p>
+<p>Is there any issue you don’t see? <a href="mailto:contactvotetheissues@gmail.com">Let us know about it!</a></p>
+<p>We put effort into building this, and we appreciate any fan mail you want to send our way. Tag us on Instagram <a href="https://www.instagram.com/votetheissues/">@votetheissues.</a></p>
 
             
             

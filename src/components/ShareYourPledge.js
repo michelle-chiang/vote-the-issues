@@ -101,7 +101,7 @@ class ShareYourPledge extends React.Component {
         return (
             <div>
                 <Header activeRoute='share-your-pledge' />
-                <p>{`Suggested caption: I'm voting ${plan['vote-method']} ${plan['bda']} ${plan['when']}.`}</p>
+                <p id="caption">{`Suggested caption: I'm voting ${plan['vote-method']} ${plan['bda']} ${plan['when']}.`}</p>
                 <p>Click on each image to download, then share on your favorite social media platform!</p>
                 {/* TODO: display plan information */}
                 {issues.map(function(issue, i) {
