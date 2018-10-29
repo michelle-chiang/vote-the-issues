@@ -1,26 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
 
 import Header from './Header';
 
 import * as routes from '../constants/routes';
 
 import './MakeYourPlan.css';
-
-const SortableItem = SortableElement(({value}) =>
-  <li>{value}</li>
-);
-
-const SortableList = SortableContainer(({items}) => {
-  return (
-    <ul>
-      {items.map((value, index) => (
-        <SortableItem key={`item-${index}`} index={index} value={value} />
-      ))}
-    </ul>
-  );
-});
 
 class MakeYourPlan extends React.Component {
     componentDidMount () {
