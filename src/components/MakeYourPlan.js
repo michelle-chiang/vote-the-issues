@@ -95,11 +95,6 @@ class MakeYourPlan extends React.Component {
                     </div>
                     <p className="footer"><Link to={routes.SHARE_YOUR_PLEDGE}>Share your pledge >>></Link></p>
                 </div>
-            <script>
-                eval(var el = document.getElementById('rankings');
-                console.log(el);
-                var sortable = Sortable.create(el);)
-            </script>
         </div>
         )
     }
